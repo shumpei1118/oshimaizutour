@@ -1,0 +1,980 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新たな自分に出会う 旅×リトリート体験 | 伊豆大島</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff7f50;
+            --secondary: #ff9f45;
+            --dark: #333333;
+            --light: #f8f9fa;
+            --accent: #ffbf69;
+            --text: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #237c74;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #d4b35a;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("/api/placeholder/1200/800");
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            filter: brightness(0.7);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            z-index: 1;
+        }
+        
+        .hero-location {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            background-color: rgba(0,0,0,0.4);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 5px;
+            letter-spacing: 1px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-location {
+                font-size: 0.9rem;
+                padding: 4px 8px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 95%;
+                letter-spacing: 0;
+            }
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        /* Concept Section */
+        .concept {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .concept-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .concept h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .concept-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+        
+        .concept p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background-color: #f7f7f7;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .feature-content {
+            padding: 30px;
+        }
+        
+        .feature-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Instructors Section */
+        .instructors {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .instructors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .instructor-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .instructor-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .instructor-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .instructor-content {
+            padding: 20px;
+        }
+        
+        .instructor-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .instructor-title {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .instructor-bio {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        
+        .social-links a {
+            color: var(--primary);
+            margin-right: 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .social-links a i {
+            margin-right: 5px;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Schedule Section */
+        .schedule {
+            padding: 100px 0;
+            background-color: #f7f7f7;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -10px;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .timeline-content h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .price-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        /* Pricing Styles */
+        .price-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .price-original {
+            font-size: 1.2rem;
+            color: #888;
+            margin-right: 15px;
+        }
+        
+        .price-original span {
+            text-decoration: line-through;
+            font-weight: 600;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .price-save {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #e74c3c;
+            margin-bottom: 15px;
+            background-color: #ffeeee;
+            padding: 5px 15px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
+        .included-list {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        .included-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .included-list li i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 100px 0;
+            background-color: #f7f7f7;
+        }
+        
+        .accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .accordion-header {
+            background-color: white;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .accordion-header:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .accordion-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        
+        .accordion-body {
+            background-color: white;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .accordion-body.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer Styles */
+        .footer {
+            padding: 50px 0 20px;
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-menu li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-menu a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-contact p {
+            margin-bottom: 10px;
+        }
+        
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin-top: 15px;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        /* Additional styles */
+        .price-discount {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #888;
+        }
+        
+        .price-limited-offer {
+            font-size: 1rem;
+            padding: 10px;
+            background-color: #fff3e0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Flow chart styles */
+        .flow-chart {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .flow-step {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            display: flex;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .flow-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .flow-content {
+            flex-grow: 1;
+        }
+        
+        .flow-content h3 {
+            margin-top: 0;
+            color: var(--dark);
+        }
+        
+        .flow-arrow {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-top: 10px;
+            margin-bottom: -20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-location {
+                font-size: 1.1rem;
+                padding: 4px 10px;
+                max-width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            .concept h2 {
+                font-size: 2rem;
+            }
+            
+            .concept-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .features-grid, .instructors-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .price-card {
+                padding: 20px;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-location">伊豆大島デジタルノマドリトリート</div>
+            <h1>新たな自分に出会う<br>旅×リトリート体験</h1>
+            <p>待っているのは新しい自分と次の出会い</p>
+            <a href="https://docs.google.com/forms/d/1fMNCLrUfnr6dyueF_t0LixdLSkR0Y23xnCfmwoeQ5ig/edit" class="btn" target="_blank">参加する (5月17日-19日)</a>
+        </div>
+    </section>
+    
+    <!-- Concept Section -->
+    <section class="concept" id="concept">
+        <div class="container">
+            <div class="concept-content">
+                <h2>CONCEPT</h2>
+                <div class="concept-subtitle">人生を遊ぼう</div>
+                <p>自分と向き合う時間を作る。今の情報の多い時代で何か疑問を持っている人、自分の向かう方向が分からない人。自分の成長を感じる3日間。</p>
+                <p>大自然の中でリフレッシュしながら、未来のスキルやライフスタイルに触れる。価値観の近い仲間と出会い、語り合う。</p>
+                <p>夢中になれることは、がんばって見つけるものではなく、<span class="highlight">ワクワクする瞬間の中にある。</span> このリトリートで出会うのは、<span class="highlight">新しい環境、新しい価値観、新しい人、そして新しい自分。</span> あなたの可能性は、ここから大きく広がっていく。</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>特徴</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="/api/placeholder/400/300" alt="伊豆大島の絶景" class="feature-img">
+                    <div class="feature-content">
+                        <h3>新しい場所で新しい体験</h3>
+                        <p>日常を離れ、伊豆大島という特別な環境で、これまで知らなかった世界を体験。AI・ドローン・デジタルツールなどの<span class="highlight">最先端スキルを体験</span>しながら、「好奇心のままにスキルを磨く」という、新しい働き方のヒントを見つけよう。</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <img src="/api/placeholder/400/300" alt="自分と向き合う時間" class="feature-img">
+                    <div class="feature-content">
+                        <h3>自分と向き合う</h3>
+                        <p>新しい情報、体験をすることで新たな視点や気づきを得ることができます。「いつかやってみたい」を「今からできる」に変えるヒントがここにあります。</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <img src="/api/placeholder/400/300" alt="仲間との交流" class="feature-img">
+                    <div class="feature-content">
+                        <h3>価値観の合う人と出会う</h3>
+                        <p>リトリートの運営メンバーは全員がデジタルノマドワーカー。異なる価値観やバックグラウンドを持つ仲間との交流が、あなたの視野を広げ、未来の可能性を広げるきっかけに。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Instructors Section -->
+    <section class="instructors" id="instructors">
+        <div class="container">
+            <div class="section-title">
+                <h2>講師紹介</h2>
+                <p class="instructor-subheading">サポートする講師陣は、全員が現役のデジタルノマドとして活躍しています。</p>
+            </div>
+            <div class="instructors-grid">
+                <div class="instructor-card">
+                    <img src="/api/placeholder/400/400" alt="河合 舜平" class="instructor-img">
+                    <div class="instructor-content">
+                        <h3 class="instructor-name">河合 舜平</h3>
+                        <div class="instructor-title">合同会社KALEIDO 代表</div>
+                        <p class="instructor-bio">高校卒業後、地元の工場に就職後、会社を辞め自転車で日本一周の旅に出る。旅と同時に始めたカメラに魅了され独学で映像を学び10ヶ月で日本国際観光映像祭優秀賞受賞。現在は世界を旅するクリエイターとしてSNSで活動し合同会社KALEIDOでは「人生をクリエイティブに」を理念に掲げて映像×SNSマーケティング×AIを使った広告事業を展開。企業に対してのAI法人研修も行う。</p>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/_shunpei_1118/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="instructor-card">
+                    <img src="/api/placeholder/400/400" alt="村岡 旦将" class="instructor-img">
+                    <div class="instructor-content">
+                        <h3 class="instructor-name">村岡 旦将</h3>
+                        <div class="instructor-title">株式会社おしんドリーム取締役<br>おしんドローンスクール 代表</div>
+                        <p class="instructor-bio">岡山生まれ、浜松育ち。幼少期から国内を転々とし、大学在学中にスタートアップに参画。22歳で取締役に就任し、ドローンスクール事業を立ち上げ1年で売上3倍に。現在は浜松・伊豆大島・東京を拠点にオンラインで経営・事業開発を行い、ノマドライフを実践中。趣味は筋トレと散歩。じっとしているのが苦手で、常に新しい環境を求めて移動するのがライフスタイルの一部。</p>
+                    </div>
+                </div>
+                <div class="instructor-card">
+                    <img src="/api/placeholder/400/400" alt="田村 まり" class="instructor-img">
+                    <div class="instructor-content">
+                        <h3 class="instructor-name">田村 まり</h3>
+                        <div class="instructor-title">株式会社おしんドリーム取締役</div>
+                        <p class="instructor-bio">アメリカ生まれ、生まれながらのノマド気質。大学で国際協力に関心を持ち、そこから自分なりのテーマを持って海外を一人旅するのが趣味。ひょんなきっかけでスタートアップに創業メンバーとして参画し、気づいたらドローンインストラクターに。現在はパソコンとドローンを手に、世界を旅して絶景を空撮をしながら、旅先の国で新規マーケットを開拓するデジタルノマドライフを体現。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Schedule Section -->
+    <section class="schedule" id="schedule">
+        <div class="container">
+            <div class="section-title">
+                <h2>スケジュール</h2>
+                <p>リトリートの詳細なスケジュールをご確認いただけます</p>
+            </div>
+            <div class="text-center" style="margin-top: 30px;">
+                <a href="https://ohshima-digital-nomad-mkrslhh.gamma.site/" class="btn btn-secondary" style="margin-bottom: 30px;" target="_blank">スケジュールはこちらから</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>料金</h2>
+            </div>
+            <div class="price-card">
+                <h3>デジタルノマドリトリート参加費</h3>
+                <div class="price-container">
+                    <div class="price-original">通常価格 <span>¥99,000</span></div>
+                    <div class="price">¥79,800</div>
+                </div>
+                <p class="price-limited-offer">24日までのお申し込み限定特別価格<br>定員10名（埋まり次第終了）</p>
+                <ul class="included-list">
+                    <li><i class="fas fa-check"></i> 熱海-大島間の往復船便</li>
+                    <li><i class="fas fa-check"></i> 宿泊費（2泊）</li>
+                    <li><i class="fas fa-check"></i> 全食事（1日目昼食〜3日目昼食）</li>
+                    <li><i class="fas fa-check"></i> アクティビティ費用</li>
+                    <li><i class="fas fa-check"></i> ワークショップ参加費</li>
+                    <li><i class="fas fa-check"></i> デジタルノマド講師による指導</li>
+                </ul>
+                <a href="https://docs.google.com/forms/d/1fMNCLrUfnr6dyueF_t0LixdLSkR0Y23xnCfmwoeQ5ig/edit" class="btn btn-secondary" target="_blank">参加する</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Flow Section -->
+    <section class="flow" id="flow">
+        <div class="container">
+            <div class="section-title">
+                <h2>参加までの流れ</h2>
+            </div>
+            <div class="flow-chart">
+                <div class="flow-step">
+                    <div class="flow-number">1</div>
+                    <div class="flow-content">
+                        <h3>お申し込み</h3>
+                        <p>Webサイトのフォームから必要事項を入力してお申し込みください</p>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">2</div>
+                    <div class="flow-content">
+                        <h3>事前カウンセリング</h3>
+                        <p>参加目的や希望をお聞きする簡単なオンラインカウンセリングを行います</p>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">3</div>
+                    <div class="flow-content">
+                        <h3>お支払い</h3>
+                        <p>参加が確定しましたら、指定の方法でお支払いをお願いします</p>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">4</div>
+                    <div class="flow-content">
+                        <h3>参加</h3>
+                        <p>当日はお送りする詳細に従って集合場所にお越しください</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>よくある質問</h2>
+            </div>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3>一人での参加でも大丈夫ですか？</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="accordion-body">
+                        <p>はい、一人での参加も大歓迎です。実際に参加者の多くは一人で参加されています。グループワークなどを通じて自然と交流が生まれる環境を作っていますので、ご安心ください。</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3>パソコンのスキルがあまりないのですが参加できますか？</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="accordion-body">
+                        <p>はい、初心者の方でも参加可能です。基本的なパソコン操作（インターネット閲覧、文字入力など）ができれば問題ありません。ワークショップではスタッフがサポートいたします。</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3>持ち物は何が必要ですか？</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="accordion-body">
+                        <p>ノートパソコン、動きやすい服装、防寒着、雨具、水筒などをご持参ください。詳細な持ち物リストはお申し込み後にお送りします。</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3>天候不良の場合はどうなりますか？</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="accordion-body">
+                        <p>荒天により船が欠航となる場合は、日程変更または全額返金の対応をいたします。島内での活動については、天候に応じて代替プログラムをご用意しています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>踏み出せない人生に終止符を</h2>
+            <p>BRING AN END, FOR A LIFE CAN'T TAKE A STEP</p>
+            <p>5月17日〜19日の伊豆大島デジタルノマドリトリートに参加しませんか？</p>
+            <p>定員10名・先着順となります</p>
+            <a href="https://docs.google.com/forms/d/1fMNCLrUfnr6dyueF_t0LixdLSkR0Y23xnCfmwoeQ5ig/edit" class="btn btn-secondary" target="_blank">今すぐ申し込む</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>伊豆大島デジタルノマドリトリート</h3>
+                </div>
+                <div class="footer-nav">
+                    <ul class="footer-menu">
+                        <li><a href="#concept">コンセプト</a></li>
+                        <li><a href="#features">体験できること</a></li>
+                        <li><a href="#instructors">講師紹介</a></li>
+                        <li><a href="https://ohshima-digital-nomad-mkrslhh.gamma.site/" target="_blank">スケジュール</a></li>
+                        <li><a href="#pricing">料金</a></li>
+                        <li><a href="#flow">参加までの流れ</a></li>
+                        <li><a href="#faq">よくある質問</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <p>お問い合わせ：kaleido.kcs@gmail.com</p>
+                    <p>TEL: 070-1524-2790</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 デジタルノマドリトリート. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://hamamatsu.odschool.jp/law/" target="_blank">特定商取引法に基づく表記</a>
+                    <a href="https://hamamatsu.odschool.jp/policy/" target="_blank">プライバシーポリシー</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAccordion(element) {
+            const body = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            if (body.classList.contains('active')) {
+                body.classList.remove('active');
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            } else {
+                body.classList.add('active');
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            }
+        }
+    </script>
+</body>
+</html>
